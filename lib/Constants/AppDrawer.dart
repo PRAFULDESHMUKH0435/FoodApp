@@ -2,9 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:food_app/screens/about_app.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class AppDrawer extends StatelessWidget {
+class AppDrawer extends StatefulWidget {
   const AppDrawer({super.key});
+
+  @override
+  State<AppDrawer> createState() => _AppDrawerState();
+}
+
+class _AppDrawerState extends State<AppDrawer> {
+
+  final Uri _url =
+      Uri.parse('https://sites.google.com/view/zainbookstore/home');
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,18 +52,17 @@ class AppDrawer extends StatelessWidget {
             leading: const Icon(Icons.info),
             title: const Text('About App'),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>AboutApp()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => AboutApp()));
             },
           ),
           ListTile(
             leading: const Icon(Icons.privacy_tip),
             title: const Text('Privacy Policy'),
             onTap: () {
-              Navigator.pop(context);
-              // Add navigation to Privacy Policy screen
+              _launchUrl();
             },
           ),
-          
           ListTile(
             leading: const Icon(Icons.contact_mail),
             title: const Text('Contact Us'),
