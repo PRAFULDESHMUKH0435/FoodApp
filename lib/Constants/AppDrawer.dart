@@ -14,7 +14,7 @@ class AppDrawer extends StatefulWidget {
 class _AppDrawerState extends State<AppDrawer> {
 
   final Uri _url =
-      Uri.parse('https://sites.google.com/view/zainbookstore/home');
+      Uri.parse('https://www.freeprivacypolicy.com/live/d271b0c4-6cde-4013-a113-9368f37cb6ff');
   Future<void> _launchUrl() async {
     if (!await launchUrl(_url)) {
       throw Exception('Could not launch $_url');
@@ -35,14 +35,14 @@ class _AppDrawerState extends State<AppDrawer> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Food Recipe',
+                  'Food Recipes',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  "Welcome To Food Recipe",
+                  "Welcome To Food Recipes",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 )
               ],
@@ -53,7 +53,7 @@ class _AppDrawerState extends State<AppDrawer> {
             title: const Text('About App'),
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => AboutApp()));
+                  context, MaterialPageRoute(builder: (context) => const AboutApp()));
             },
           ),
           ListTile(
@@ -70,9 +70,9 @@ class _AppDrawerState extends State<AppDrawer> {
               showTopSnackBar(
                 snackBarPosition: SnackBarPosition.bottom,
                 Overlay.of(context),
-                CustomSnackBar.info(
+                const CustomSnackBar.info(
                   message:
-                      "For Any Issues and Enqueries Reach Us At : ###@gmail.com",
+                      "For Any Issues and Enqueries Reach Us At : darshilbavisya@gmail.com",
                 ),
               );
             },

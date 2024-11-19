@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -24,29 +22,17 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.redAccent,
-        title: Text(name,style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-        actions: [
-          IconButton(onPressed: (){
-            showTopSnackBar(
-                snackBarPosition: SnackBarPosition.bottom,
-                Overlay.of(context),
-                const CustomSnackBar.info(
-                  message:
-                      "Report For This Food Has Been Submitted",
-                ),
-              );
-          }, icon: Icon(Icons.report)),
-        ],
+        title: Text(name,style: const TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
       ),
       body: Container(
-        margin: EdgeInsets.all(5.0),
+        margin: const EdgeInsets.all(5.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Hero(
                 tag: name,
-                child: Image.network(
+                child: Image.asset(
                   image,
                   height: 250,
                   width: double.infinity,
@@ -103,7 +89,7 @@ class DetailsScreen extends StatelessWidget {
                 )
               else
                  Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Container(
                     height: 60,
                     width: 60,

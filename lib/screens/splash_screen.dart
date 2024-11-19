@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                   Image.asset('assets/images/splashimage.jpg'),
                   const SizedBox(height: 10),
                   const Text(
-                    "Food Factory",
+                    "Food Recipes",
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,

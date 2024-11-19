@@ -7,7 +7,7 @@ class AboutApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             "About App",
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
           ),
@@ -16,7 +16,7 @@ class AboutApp extends StatelessWidget {
         body: ListView(
           children: [
             Container(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: const Center(
                   child: Text(
                 'Food Recipe is your ultimate guide to exploring delicious recipes from around the world! Whether you\'re a seasoned cook or a beginner, this app offers a variety of food recipes with step-by-step instructions and instructional videos to help you make the perfect dish every time.\n\n'
